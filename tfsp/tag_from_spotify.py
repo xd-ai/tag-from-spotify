@@ -45,6 +45,7 @@ def tfsp(album_id, dir="."):
         song.tags["ARTIST"] = [a["name"] for a in track["artists"]]
         song.tags["ALBUM"] = album["name"]
         song.tags["ALBUMARTIST"] = [a["name"] for a in album["artists"]]
+        song.tags["DATE"] = album["release_date"]
         song.save()
 
         # now rename the file, but track name may contain some characters that won't be allowed to use in filename
